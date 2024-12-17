@@ -1,5 +1,6 @@
 import pygame
 from constaints import *
+from shot import Shot
 from CircleShape import CircleShape
 
 class Player(CircleShape):
@@ -43,3 +44,8 @@ class Player(CircleShape):
             self.shoot()
         
         self.shoot_timer -= dt
+
+
+    def shoot(self):
+        shot = Shot(self.position.x, self.position.y)
+        shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
