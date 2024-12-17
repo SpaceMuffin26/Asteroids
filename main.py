@@ -43,8 +43,10 @@ def main():
 
             for shot in shots:
                 if asteroid.collides_with(shot):
-                    shot.kill()
-                    asteroid.kill()
+                    #acricate this if you want asteroids to die instantly without split
+                    #shot.kill()
+                    #asteroid.kill()
+                    asteroid.split()
 
         screen.fill("black")
 
