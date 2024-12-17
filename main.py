@@ -26,6 +26,9 @@ def main():
         #render the player
         player.draw(screen)
 
+        #checks for player inputs and such
+        player.update(dt)
+
         #makes the window close button work
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
