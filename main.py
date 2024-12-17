@@ -1,5 +1,6 @@
 import pygame
-from constraints import *
+from constaints import *
+from player import Player
 
 def main():
     pygame.init()
@@ -8,6 +9,11 @@ def main():
     #makes a clock object for later limiting fps
     clock = pygame.time.Clock()
     dt = 0
+    
+    #instantiate a player object
+    x = SCREEN_WIDTH / 2
+    y = SCREEN_HEIGHT / 2
+    player = Player(x, y)
 
     #game loop
     while True:
@@ -16,6 +22,9 @@ def main():
 
         #calculates delta
         dt = clock.tick() / 1000
+
+        #render the player
+        player.draw(screen)
 
         #makes the window close button work
         for event in pygame.event.get():
